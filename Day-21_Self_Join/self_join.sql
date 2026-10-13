@@ -1,0 +1,19 @@
+-- Q67. Display employee name and manager name.
+SELECT E.ENAME AS EMPLOYEE, 
+    M.ENAME AS MANAGER
+FROM EMP E
+JOIN EMP M
+ON E.MGR = M.EMPNO;
+
+-- Q68. Display employees reporting to king.
+SELECT E.ENAME
+FROM EMP E
+JOIN EMP M
+ON E.MGR = M.EMPNO
+WHERE E.ENAME = 'KING';
+
+-- Q69. Display employee and manager names.
+SELECT E.ENAME AS EMPLOYEE_NAME, M.ENAME AS MANAGER_NAME
+FROM EMP E
+LEFT JOIN EMP M
+ON E.MGR = M.EMPNO;
