@@ -1,0 +1,27 @@
+-- Q70. Display employee name, department name and location.
+SELECT E.ENAME, D.DNAME, D.LOC
+FROM EMP E
+JOIN DEPT D
+ON E.DEPTNO = D.DEPTNO;
+
+-- Q71. Display employees woeking in NEW YORK.
+SELECT E.ENAME, D.DNAME, D.LOC
+FROM EMP E
+JOIN DEPT D
+ON E.DEPTNO = D.DEPTNO
+WHERE D.LOC = 'NEW YORK';
+
+-- Q72. Display employees in SALES earning more than 2000.
+SELECT E.ENAME, E.SAL, D.DNAME
+FROM EMP E 
+JOIN DEPT D
+ON E.DEPTNO = D.DEPTNO
+WHERE D.DNAME = 'SALES'
+AND E.SAL > 2000;
+
+--Q73. Find employee count department-wise with department names.
+SELECT D.DNAME, COUNT(E.EMPNO) AS EMPLOYEE_COUNT
+FROM DEPT D
+LEFT JOIN EMP E
+ON D.DEPTNO = E.DEPTNO
+GROUP BY D.DNAME;
